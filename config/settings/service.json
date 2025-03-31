@@ -4,7 +4,7 @@
       "endpoint": "/__health"
     },
     "security/cors": {
-      "allow_origins": ["*"],
+      "allow_origins": ["http://localhost:5173", "https://resume.ndquang.tech"],
       "allow_methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE", "PATCH"],
       "allow_headers": ["Content-Type", "Authorization"],
       "max_age": "24h"
