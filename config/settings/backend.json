@@ -1,0 +1,34 @@
+{
+  "endpoints": [
+    {
+      "endpoint": "/api/backend/users",
+      "method": "GET",
+      "backend": "/api/users"
+    },
+    {
+      "endpoint": "/api/backend/work-experiences",
+      "method": "GET",
+      "backend": "/api/work-experiences"
+    },
+    {
+      "endpoint": "/api/backend/skills",
+      "method": "GET",
+      "backend": "/api/skills"
+    },
+    {
+      "endpoint": "/api/backend/projects",
+      "method": "GET",
+      "backend": "/api/projects"
+    },
+    {
+      "endpoint": "/api/backend/educations",
+      "method": "GET",
+      "backend": "/api/educations"
+    },
+    {
+      "endpoint": "/api/backend/contacts",
+      "method": "POST",
+      "backend": "/api/contacts"
+    }
+  ]
+}

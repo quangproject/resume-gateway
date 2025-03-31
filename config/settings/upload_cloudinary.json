@@ -1,0 +1,19 @@
+{
+  "endpoints": [
+    {
+      "endpoint": "/api/cloudinary/upload",
+      "method": "POST",
+      "backend": "/api/cloudinary/upload"
+    },
+    {
+      "endpoint": "/api/cloudinary/delete",
+      "method": "POST",
+      "backend": "/api/cloudinary/delete"
+    },
+    {
+      "endpoint": "/api/cloudinary/get-file-url",
+      "method": "POST",
+      "backend": "/api/cloudinary/get-file-url"
+    }
+  ]
+}

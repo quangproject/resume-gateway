@@ -1,0 +1,24 @@
+{
+	"endpoint": "{{ .endpoint }}",
+	"method": "{{ .method }}",
+	"output_encoding": "no-op",
+	"backend": [
+	  {
+			"url_pattern": "{{ .backend }}",
+			"host": ["{{ env `UPLOAD_CLOUDINARY_URL` }}"],
+			"method": "{{ .method }}",
+			"input_query_strings": ["*"],
+			"encoding": "json"
+	  }
+	],
+	"extra_config": {
+    "qos/ratelimit/router": {
+      "client_max_rate": 200,
+      "client_capacity": 400,
+      "strategy": "ip",
+      "every": "1s"
+    }
+  },
+	"input_query_strings": ["*"],
+	"input_headers": ["*"]
+}

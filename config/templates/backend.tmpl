@@ -1,0 +1,25 @@
+{
+	"endpoint": "{{ .endpoint }}",
+	"method": "{{ .method }}",
+	"output_encoding": "no-op",
+	"backend": [
+	  {
+			"url_pattern": "{{ .backend }}",
+			"encoding": "no-op",
+			"sd": "static",
+			"host": ["{{ env `BACKEND_URL` }}"],
+			"method": "{{ .method }}",
+			"disable_host_sanitize": false
+	  }
+	],
+	"extra_config": {
+    "qos/ratelimit/router": {
+      "client_max_rate": 200,
+      "client_capacity": 400,
+      "strategy": "ip",
+      "every": "1s"
+    }
+  },
+	"input_query_strings": ["*"],
+	"input_headers": ["*"]
+}

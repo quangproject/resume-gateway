@@ -1,0 +1,13 @@
+{
+  "extra_config": {
+    "github_com/devopsfaith/krakend-health": {
+      "endpoint": "/__health"
+    },
+    "security/cors": {
+      "allow_origins": ["*"],
+      "allow_methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE", "PATCH"],
+      "allow_headers": ["Content-Type", "Authorization"],
+      "max_age": "24h"
+    }
+  }
+}

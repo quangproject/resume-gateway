@@ -1,0 +1,23 @@
+{
+  "$schema": "https://www.krakend.io/schema/krakend.json",
+  "version": 3,
+  "name": "Resume Gateway",
+  "timeout": "500s",
+  "cache_ttl": "50s",
+  "listen_ip": "0.0.0.0",
+  "extra_config": {{ marshal .service.extra_config }},
+  "endpoints": [
+    {{ range $idx, $endpoint := .upload_cloudinary.endpoints }}
+      {{if $idx}},{{end}}
+      {{ template "upload_cloudinary.tmpl" $endpoint }}
+    {{ end }},
+    {{ range $idx, $endpoint := .backend.endpoints }}
+      {{if $idx}},{{end}}
+      {{ template "backend.tmpl" $endpoint }}
+    {{ end }},
+    {{ range $idx, $endpoint := .cms.endpoints }}
+      {{if $idx}},{{end}}
+      {{ template "cms.tmpl" $endpoint }}
+    {{ end }}
+  ]
+}
